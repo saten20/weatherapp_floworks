@@ -19,3 +19,155 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Updated gradient with more modern weather-app colors */
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7F7FD5 100%);
+  overflow: hidden;
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.cloud {
+  position: absolute;
+  /* Updated cloud styling for better blending */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  border-radius: 50%;
+  filter: blur(4px);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+.cloud:before,
+.cloud:after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  border-radius: 50%;
+}
+
+.cloud1 {
+  width: 180px;
+  height: 55px;
+  top: 10%;
+  left: 15%;
+  opacity: 0.5;
+  animation: float 14s ease-in-out infinite;
+}
+
+.cloud1:before {
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: 10px;
+}
+
+.cloud1:after {
+  width: 120px;
+  height: 120px;
+  top: -70px;
+  right: 10px;
+}
+
+.cloud2 {
+  width: 140px;
+  height: 42px;
+  top: 35%;
+  left: 70%;
+  opacity: 0.4;
+  animation: float-reverse 16s ease-in-out infinite;
+}
+
+.cloud2:before {
+  width: 75px;
+  height: 75px;
+  top: -37px;
+  left: 7px;
+}
+
+.cloud2:after {
+  width: 90px;
+  height: 90px;
+  top: -52px;
+  right: 7px;
+}
+
+.cloud3 {
+  width: 160px;
+  height: 48px;
+  top: 60%;
+  left: 25%;
+  opacity: 0.45;
+  animation: float 18s ease-in-out infinite;
+}
+
+.cloud3:before {
+  width: 90px;
+  height: 90px;
+  top: -45px;
+  left: 9px;
+}
+
+.cloud3:after {
+  width: 108px;
+  height: 108px;
+  top: -63px;
+  right: 9px;
+}
+
+.cloud4 {
+  width: 170px;
+  height: 51px;
+  top: 25%;
+  left: 85%;
+  opacity: 0.35;
+  animation: float-reverse 15s ease-in-out infinite;
+}
+
+.cloud4:before {
+  width: 90px;
+  height: 90px;
+  top: -45px;
+  left: 9px;
+}
+
+.cloud4:after {
+  width: 108px;
+  height: 108px;
+  top: -63px;
+  right: 9px;
+}
